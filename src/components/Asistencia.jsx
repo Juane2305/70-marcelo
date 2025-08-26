@@ -16,10 +16,10 @@ const Asistencia = ({ clase, claseButton, claseTitle, linkAsistencia }) => {
   return (
     <>
       {linkAsistencia && linkAsistencia.trim() !== "" && (
-        <div className={`pb-20 pt-10 ${clase}`}>
+        <div className={`pb-20 pt-10 ${clase} font-merriweather`}>
           <div className="h-full flex flex-col justify-center items-center space-y-2">
             <h2
-              className={`text-4xl font-light text-center ${claseTitle}`}
+              className={`text-2xl font-light text-center ${claseTitle}`}
               data-aos="fade-up"
             >
               Confirmación de Asistencia

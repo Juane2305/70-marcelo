@@ -203,12 +203,12 @@ const Invitacion = () => {
         //   titular_extranjera={invitacionData.titular_extranjera}
         //   banco_extranjera={invitacionData.banco_extranjera}
         />
+          <TextoFinal textoFinal="Hay momentos en la vida que son especiales por sí solos, compartirlos con los que quieres los convierten en momentos inolvidables" textClass="font-merriweather text-gray-600"/>
         <Asistencia
-          linkAsistencia=""
-          clase="py-10 bg-fondo-banner"
-          claseButton="border-2 py-3 px-6 rounded-full border-gray-800 font-semibold hover:border-gray-700 hover:bg-white hover:text-gray:800"
+          linkAsistencia="https://docs.google.com/forms/d/e/1FAIpQLScK60lzNoScu8tHIekssS6ItUJRHRWjFAMy-1JCKicjaMGHnA/viewform?usp=dialog"
+          clase="py-10 bg-fondo-banner border-t bordet-t-gray-800"
+          claseButton="border-2 py-3 px-6 rounded-full border-gray-800 font-semibold hover:border-yellow-950 hover:bg-white hover:text-gray:800"
         />
-        <TextoFinal textoFinal="Hay momentos en la vida que son especiales por sí solos, compartirlos con los que quieres los convierten en momentos inolvidables" textClass="font-merriweather text-gray-600"/>
         <Footer />
       </div>
     </div>
