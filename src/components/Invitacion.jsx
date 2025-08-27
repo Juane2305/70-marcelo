@@ -50,7 +50,7 @@ const Invitacion = () => {
       <MusicPlayer cancion={cancion} />
 
       <div
-        className="relative flex flex-col items-center justify-center h-screen w-full text-center overflow-hidden bg-fixed"
+        className="relative flex flex-col items-center justify-center h-screen w-full text-center overflow-hidden"
         style={{
           backgroundImage: "url('/boliche.jpg')",
           backgroundSize: 'cover',
