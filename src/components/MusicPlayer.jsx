@@ -32,9 +32,9 @@ const MusicPlayer = ({ cancion, initialPlay = false }) => {
     <div className="w-full">
       <audio ref={audioRef} src={cancion} preload="auto" />
 
-      <div className="fixed top-12 right-10 sm:top-12 sm:right-10 z-50 flex flex-col items-center gap-1">
+      <div className={`fixed top-12 right-10 sm:top-12 sm:right-10 z-50 flex flex-col items-center gap-1 ${!isPlaying ? 'animate-bounce' : ''}`}>
         {!isPlaying && (
-          <div className="text-[12px] text-center sm:text-sm bg-gray-800 text-white font-semibold rounded-md px-3 py-1 shadow-lg animate-bounce">
+          <div className="text-[12px] text-center sm:text-sm bg-gray-800 text-white font-semibold rounded-md px-3 py-1 shadow-lg">
           Presioná <br /> acá
           </div>
         )}
@@ -44,13 +44,13 @@ const MusicPlayer = ({ cancion, initialPlay = false }) => {
             <img
               src={pause}
               alt="Pause"
-              className="size-14 sm:size-16 p-3 animate-custom-bounce bg-[#DAA520] rounded-full bg-opacity-60 backdrop-blur animate-bounce"
+              className="size-14 sm:size-16 p-3 animate-custom-bounce bg-[#DAA520] rounded-full bg-opacity-60 backdrop-blur"
             />
           ) : (
             <img
               src={icon}
               alt="Play"
-              className="size-14 sm:size-16 p-3 animate-custom-bounce bg-[#DAA520] rounded-full bg-opacity-60 backdrop-blur animate-bounce"
+              className="size-14 sm:size-16 p-3 animate-custom-bounce bg-[#DAA520] rounded-full bg-opacity-60 backdrop-blur"
             />
           )}
         </button>

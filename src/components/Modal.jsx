@@ -3,10 +3,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { IoCopyOutline } from "react-icons/io5";
 
+const GOLD = "#D4AF37"; // dorado
+
 export const Modal = ({
   claseBoton,
-  claseBotonModal,
-  borderModal,
   cbu,
   alias,
   banco,
@@ -16,9 +16,7 @@ export const Modal = ({
   numero_cuenta,
   titular_extranjera,
   banco_extranjera,
-  styleModal,
-  styleBorderModal,
-  styleTextColor,
+
 }) => {
   useEffect(() => {
     AOS.init({
@@ -29,6 +27,19 @@ export const Modal = ({
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isEntering, setIsEntering] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+    // disparar animación de entrada en el siguiente tick
+    setTimeout(() => setIsEntering(true), 10);
+  };
+
+  const closeModal = () => {
+    // animación de salida
+    setIsEntering(false);
+    setTimeout(() => setIsOpen(false), 300); // debe coincidir con duration-300
+  };
 
   const copiarTexto = (texto) => {
     navigator.clipboard.writeText(texto)
@@ -43,73 +54,91 @@ export const Modal = ({
   return (
     <>
       <button
-        className={ `${claseBoton} cursor-pointer mt-5`}
+        className={`${claseBoton} cursor-pointer mt-5`}
         data-aos='fade-up'
-        onClick={() => setIsOpen(true)}
+        onClick={openModal}
       >
         Ver Datos Bancarios
       </button>
 
       {isOpen && (
-        <div className={`fixed inset-0 bg-black/30 backdrop-blur-md flex justify-center items-center z-50`} style={styleModal}>
-          <div className={`bg-white p-10 rounded-lg flex flex-col justify-center items-center border-2 ${borderModal}`} style={styleBorderModal}>
-            <div className="flex flex-col justify-center text-center space-y-7 text-gray-900 w-full max-w-md ">
-              <h2 className="font-bold text-2xl">Datos Bancarios</h2>
-              {moneda_extranjera && moneda_extranjera.trim() !== "" && (
-              <h3 className="text-xl font-semibold mb-4">Datos en Pesos</h3>
-              )}
-              <div className="w-full space-y-4 text-left text-gray-800">
-                <p className="text-lg flex justify-between items-center">
-                  <span><span className="font-semibold">Nombre del titular:</span> {nombre}</span>
-                </p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          {/* Overlay con fade */}
+          <div
+            className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isEntering ? 'opacity-100' : 'opacity-0'}`}
+            onClick={closeModal}
+          />
 
-                <p className="text-lg flex justify-between items-center">
-                  <span><span className="font-semibold">CBU:</span> {cbu}</span>
-                  <button onClick={() => copiarTexto(cbu)}>
-                    <IoCopyOutline style={styleTextColor} className="ml-2" />
-                  </button>
-                </p>
+          {/* Contenedor del modal con fade + scale */}
+          <div
+            className={`relative mx-5 sm:mx-8 w-full max-w-lg rounded-2xl border shadow-2xl transition-all duration-300 ${isEntering ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+            style={{ backgroundColor: '#FFFFFF', borderColor: GOLD }}
+          >
+            <div className="px-6 py-7 sm:px-10 sm:py-9 text-gray-900">
+              <div className="flex flex-col justify-center text-center space-y-6 w-full">
+                <h2 className="font-bold text-2xl" style={{ color: "black" }}>Datos Bancarios</h2>
 
-                <p className="text-lg flex justify-between items-center">
-                  <span><span className="font-semibold">Alias:</span> {alias}</span>
-                  <button onClick={() => copiarTexto(alias)}>
-                    <IoCopyOutline style={styleTextColor} className="ml-2" />
-                  </button>
-                </p>
+                {moneda_extranjera && moneda_extranjera.trim() !== "" && (
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: GOLD }}>Datos en Pesos</h3>
+                )}
 
-                <p className="text-lg flex justify-between items-center">
-                  <span><span className="font-semibold">Banco:</span> {banco}</span>
-                </p>
-              </div>
-              {moneda_extranjera && moneda_extranjera.trim() !== "" && (
-                <div className="w-full mt-8">
-                  <hr className="border-t-2 border-gray-300 mb-4" />
-                  <h3 className="text-xl font-semibold mb-4">Datos en {moneda_extranjera}</h3>
-                  <div className="text-left space-y-4 text-gray-800">
-                    <p className="text-lg flex justify-between items-center">
-                      <span><span className="font-semibold">{tipo_cuenta}: </span>{numero_cuenta}</span>
-                      <button onClick={() => copiarTexto(numero_cuenta)}>
-                        <IoCopyOutline style={styleTextColor} className="ml-2" />
-                      </button>
-                    </p>
+                <div className="w-full space-y-4 text-left">
+                  <p className="text-lg flex justify-between items-center">
+                    <span><span className="font-semibold" style={{ color: GOLD }}>Nombre del titular:</span> {nombre}</span>
+                  </p>
 
-                    <p className="text-lg flex justify-between items-center">
-                      <span><span className="font-semibold">Titular:</span> {titular_extranjera}</span>
-                    </p>
+                  <p className="text-lg flex justify-between items-center">
+                    <span><span className="font-semibold" style={{ color: GOLD }}>CBU:</span> {cbu}</span>
+                    <button onClick={() => copiarTexto(cbu)}>
+                      <IoCopyOutline style={{ color: '#000' }} className="ml-2" />
+                    </button>
+                  </p>
 
-                    <p className="text-lg flex justify-between items-center">
-                      <span><span className="font-semibold">Banco:</span> {banco_extranjera}</span>
-                    </p>
-                  </div>
+                  <p className="text-lg flex justify-between items-center">
+                    <span><span className="font-semibold" style={{ color: GOLD }}>Alias:</span> {alias}</span>
+                    <button onClick={() => copiarTexto(alias)}>
+                      <IoCopyOutline style={{ color: '#000' }} className="ml-2" />
+                    </button>
+                  </p>
+
+                  <p className="text-lg flex justify-between items-center">
+                    <span><span className="font-semibold" style={{ color: GOLD }}>Banco:</span> {banco}</span>
+                  </p>
                 </div>
-              )}
 
-              <button
-                className={`py-4 rounded-lg text-white font-bold hover:bg-transparent hover:transition hover:text-gray-900 border-4 transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg`} style={claseBotonModal}
-                onClick={() => setIsOpen(false)}
-              >
-                Cerrar
-              </button>
+                {moneda_extranjera && moneda_extranjera.trim() !== "" && (
+                  <div className="w-full mt-6">
+                    <hr className="border-t mb-4" style={{ borderColor: GOLD }} />
+                    <h3 className="text-xl font-semibold mb-3" style={{ color: GOLD }}>Datos en {moneda_extranjera}</h3>
+                    <div className="text-left space-y-4">
+                      <p className="text-lg flex justify-between items-center">
+                        <span><span className="font-semibold" style={{ color: GOLD }}>{tipo_cuenta}: </span>{numero_cuenta}</span>
+                        <button onClick={() => copiarTexto(numero_cuenta)}>
+                          <IoCopyOutline style={{ color: '#000' }} className="ml-2" />
+                        </button>
+                      </p>
+
+                      <p className="text-lg flex justify-between items-center">
+                        <span><span className="font-semibold" style={{ color: GOLD }}>Titular:</span> {titular_extranjera}</span>
+                      </p>
+
+                      <p className="text-lg flex justify-between items-center">
+                        <span><span className="font-semibold" style={{ color: GOLD }}>Banco:</span> {banco_extranjera}</span>
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex justify-center pt-2">
+                  <button
+                    className={`py-3 px-6 rounded-lg font-bold border transition-all duration-200 hover:scale-105`}
+                    style={{ backgroundColor: GOLD, color: 'white', borderColor: GOLD }}
+                    onClick={closeModal}
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
