@@ -20,7 +20,7 @@ const GoogleCalendarButton = ({
 
   return (
     <div
-      className="flex flex-col items-center gap-y-5 font-merriweather py-16"
+      className="flex flex-col items-center gap-y-5 font-montserrat py-16"
       data-aos="fade-up"
     >
       <div style={{ width: 120, height: 120 }}>
@@ -38,7 +38,7 @@ const GoogleCalendarButton = ({
         href={googleCalendarUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`border-2 border-yellow-950 py-3 px-8 rounded-full bg-white text-gray-700 font-semibold hover:bg-gray-200  transition`}
+        className="border border-[#d7b049] py-3 px-8 rounded-full bg-[#d7b049] text-white hover:bg-transparent transition"
       >
         Agregar al Calendario
       </a>

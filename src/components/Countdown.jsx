@@ -48,7 +48,7 @@ const Countdown = ( {containerClasses, targetDate} ) => {
 
   return (
     <div className={containerClasses} data-aos="fade-in">
-      <h3 className="text-lg font-light leading-loose">Faltan...</h3>
+      <h3 className="text-lg font-light leading-loose">¡Festejemos!</h3>
       <div className="flex flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-8 text-lg" data-aos="fade-in">
         <div className="flex space-x-16 sm:space-x-8">
           <div className="flex flex-col items-center">

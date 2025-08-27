@@ -16,7 +16,7 @@ const Asistencia = ({ clase, claseButton, claseTitle, linkAsistencia }) => {
   return (
     <>
       {linkAsistencia && linkAsistencia.trim() !== "" && (
-        <div className={`pb-20 pt-10 ${clase} font-merriweather`}>
+        <div className={`py-20 ${clase} font-merriweather`}>
           <div className="h-full flex flex-col justify-center items-center space-y-2">
             <h2
               className={`text-2xl font-light text-center ${claseTitle}`}
@@ -25,7 +25,7 @@ const Asistencia = ({ clase, claseButton, claseTitle, linkAsistencia }) => {
               Confirmación de Asistencia
             </h2>
             <a href={linkAsistencia} target="_blank" rel="noopener noreferrer" data-aos="fade-up">
-              <button className={`py-4 px-6 mt-5 transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ${claseButton}`}>
+              <button className={`${claseButton}`}>
                 Confirmar asistencia
               </button>
             </a>

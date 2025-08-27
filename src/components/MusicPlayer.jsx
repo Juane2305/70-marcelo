@@ -32,21 +32,29 @@ const MusicPlayer = ({ cancion, initialPlay = false }) => {
     <div className="w-full">
       <audio ref={audioRef} src={cancion} preload="auto" />
 
-      <button onClick={togglePlayPause} type="button">
-        {isPlaying ? (
-          <img
-            src={pause}
-            alt="Pause"
-            className="text-center size-20 ml-3 sm:ml-10 mt-9 animate-custom-bounce bg-[#957f4e] rounded-full p-4 fixed bg-opacity-40 z-50"
-          />
-        ) : (
-          <img
-            src={icon}
-            alt="Play"
-            className="text-center size-20 ml-3 sm:ml-10 mt-9 animate-custom-bounce bg-[#b79d66] rounded-full p-4 fixed bg-opacity-40 z-50"
-          />
+      <div className="fixed top-12 right-10 sm:top-12 sm:right-10 z-50 flex flex-col items-center gap-1">
+        {!isPlaying && (
+          <div className="text-[12px] text-center sm:text-sm bg-gray-800 text-white font-semibold rounded-md px-3 py-1 shadow-lg animate-bounce">
+          Presioná <br /> acá
+          </div>
         )}
-      </button>
+
+        <button onClick={togglePlayPause} type="button" aria-label={isPlaying ? "Pausar música" : "Reproducir música"}>
+          {isPlaying ? (
+            <img
+              src={pause}
+              alt="Pause"
+              className="size-14 sm:size-16 p-3 animate-custom-bounce bg-[#DAA520] rounded-full bg-opacity-60 backdrop-blur animate-bounce"
+            />
+          ) : (
+            <img
+              src={icon}
+              alt="Play"
+              className="size-14 sm:size-16 p-3 animate-custom-bounce bg-[#DAA520] rounded-full bg-opacity-60 backdrop-blur animate-bounce"
+            />
+          )}
+        </button>
+      </div>
     </div>
   );
 };

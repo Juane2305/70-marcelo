@@ -8,7 +8,7 @@ import DatosBancarios from "../components/DatosBancarios";
 import Asistencia from "../components/Asistencia";
 import Footer from "../components/Footer";
 import TextoFinal from "../components/TextoFinal";
-import MusicScreen from "../components/MusicScreen";
+import MusicPlayer from "../components/MusicPlayer"
 import { GalleryPraga } from "../components/GalleryPraga";
 import cancion from "../assets/song.mp3"
 
@@ -44,86 +44,76 @@ const Invitacion = () => {
       img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219517/831ed1f8-3834-4320-8348-28212e6255cb.png",
     },
   ];
-
-  const nombres = "7 y 0"
-    .replace("&", "y")
-    .split("y")
-    .map((s) => s.trim());
-
-  const iniciales = nombres
-    .map((nombre) => nombre[0]?.toUpperCase() || "")
-    .join(" ");
-
+  
   return (
     <div className="w-full relative font-modernaText overflow-hidden">
-      <div className="absolute">
-        <MusicScreen cancion={cancion} />
-      </div>
+      <MusicPlayer cancion={cancion} />
 
-      <div className="bg-gray-50 font-merriweather relative flex flex-col items-center justify-center h-screen w-full text-center">
-
-        <svg
-          className="absolute top-0 right-0 w-1/2 max-w-[420px] h-auto opacity-80 pointer-events-none z-0"
-          viewBox="0 0 420 220"
-          fill="none"
-          aria-hidden="true"
-          style={{ zIndex: 0 }}
-        >
-          <defs>
-            <linearGradient id="silverStrokeTop" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#f5f5f5" />
-              <stop offset="0.5" stopColor="#b8860b" />
-              <stop offset="1" stopColor="#bfbfbf" />
-            </linearGradient>
-            <linearGradient id="goldStrokeTop" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ffd700" />
-              <stop offset="0.5" stopColor="#e6be8a" />
-              <stop offset="1" stopColor="#b8860b" />
-            </linearGradient>
-          </defs>
-          <path d="M0,40 C140,0 280,120 420,80" stroke="url(#silverStrokeTop)" strokeWidth="6" />
-          <path d="M60,110 C200,70 260,180 420,140" stroke="url(#goldStrokeTop)" strokeWidth="3.5" strokeDasharray="6 8" />
-        </svg>
-
-        <svg
-          className="absolute bottom-0 left-0 w-2/3 max-w-[520px] h-auto opacity-80 pointer-events-none z-0"
-          viewBox="0 0 520 260"
-          fill="none"
-          aria-hidden="true"
-          style={{ zIndex: 0 }}
-        >
-          <defs>
-            <linearGradient id="silverStrokeBottom" x1="0" y1="0" x2="520" y2="0" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#f5f5f5" />
-              <stop offset="0.5" stopColor="#d9d9d9" />
-              <stop offset="1" stopColor="#b8860b" />
-            </linearGradient>
-          </defs>
-          <path d="M0,200 C120,240 260,120 520,180" stroke="url(#silverStrokeBottom)" strokeWidth="6" />
-          <path d="M0,235 C160,210 300,150 520,210" stroke="url(#silverStrokeBottom)" strokeWidth="3.5" strokeDasharray="6 8" />
-        </svg>
+      <div
+        className="relative flex flex-col items-center justify-center h-screen w-full text-center overflow-hidden bg-fixed"
+        style={{
+          backgroundImage: "url('/src/assets/boliche.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Vignette oscura para bordes */}
         <div
-          className="absolute text-gray-500 font-eleganteTitle text-[12rem] md:text-[17rem]"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            opacity: 0.1,
-            transform: "translateY(-50%)",
-            top: "50%",
+            background:
+              'radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.75) 80%, rgba(0,0,0,0.95) 100%)',
+            zIndex: 0,
           }}
-        >
-          {iniciales}
+        />
+        {/* Capa adicional suave para resaltar el texto en mobile */}
+        <div className="absolute inset-0 bg-black/20 md:bg-black/10 z-0" />
+
+        {/* Botón de música (ya existe arriba con MusicScreen) */}
+
+        {/* Título central */}
+        <div className="mt-30 z-20">
+          <h1
+            className="z-10 font-parisienne italic text-7xl md:text-9xl leading-none mt-20 text-white"
+            style={{
+              textShadow:
+                '0 0 6px rgba(255,255,255,0.9), 0 0 22px rgba(255,255,255,0.6), 0 0 38px rgba(255,255,255,0.35)',
+            }}
+          >
+            Marcelo
+          </h1>
+
+          {/* Subtítulo */}
+          <p
+            className="z-10 mt-5 font-birthstone text-white/90 text-3xl md:text-4xl "
+            style={{
+              textShadow: '0 0 10px rgba(255,255,255,0.35)',
+              letterSpacing: '0.06em',
+            }}
+          >
+            7 décadas haciendo historia
+          </p>
         </div>
 
-        <p className="z-10 text-lg uppercase font-vintageText tracking-widest mb-20">
-          ¡Te invito a mi Cumpleaños!
-        </p>
-
-        <h1 className="z-10 text-5xl md:text-7xl font-light text-gray-800 italic">
-          Marcelo
-        </h1>
-
-        <p className="z-10 mt-28 font-vintageText text-xl">
-          22 de Noviembre de 2025
-        </p>
+        {/* Chevron dorado para scroll */}
+        <div className="absolute bottom-6 z-10 animate-bounce">
+          <svg
+            className="w-8 h-8 md:w-10 md:h-10 opacity-90"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="chevGold" x1="0" y1="0" x2="24" y2="24">
+                <stop stopColor="#ffd700" />
+                <stop offset="0.6" stopColor="#d4af37" />
+                <stop offset="1" stopColor="#b8860b" />
+              </linearGradient>
+            </defs>
+            <path d="M6 9l6 6 6-6" stroke="url(#chevGold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
       </div>
 
       <div>
@@ -134,7 +124,7 @@ const Invitacion = () => {
           <Countdown
             targetDate={targetDate}
             containerClasses={
-              "w-full flex flex-col justify-center items-center gap-y-5 bg-darkGray text-white py-10 font-merriweather"
+              "w-full flex flex-col justify-center items-center gap-y-5 bg-black text-white py-10 font-montserrat"
             }
           />
         </section>
@@ -149,21 +139,18 @@ const Invitacion = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="border-2 border-gray-600 py-3 px-8 rounded-full bg-white text-gray-700 font-bold hover:bg-transparent  transition">
+              <button className="border border-[#d7b049] py-3 px-8 rounded-full bg-[#d7b049] text-white hover:bg-transparent hover:text-gray-800 transition cursor-pointer">
                 Ubicación Google Maps
               </button>
             </a>
           </div>
         </section>
-        <TextoFinal textoFinal="7 décadas haciendo historia" textClass="font-parisienne text-3xl"/>
-
         <div className="bg-gray-50">
             <GalleryPraga images={images} texto="Nosotros" />
         </div>
-        <div className="text-center text-white relative" style={{ backgroundColor: colorPrincipal }}>
+        <div className="text-center text-white relative" style={{ backgroundColor: 'black' }}>
           <GoogleCalendarButton
             imgClass="text-white"
-            buttonClass="hover:bg-white hover:text-gray-800"
             titleCalendar={`Cumpleaños de Marcelo`}
             salon="Olga Cossettini 1031. Caba"
             fechaComienzo="20251122T2100000300"
@@ -171,7 +158,7 @@ const Invitacion = () => {
           />
         </div>
         <div className="relative">
-          <DressCode dress_code="Elegante sport" />
+          <DressCode dress_code="Elegante Sport" />
         </div>
         <DatosBancarios
           texto="¡El mejor regalo es que me acompañes en este día! Pero si de todas formas querés hacerme un regalo, podés hacerlo acá"
@@ -179,14 +166,11 @@ const Invitacion = () => {
           alias="BORDE.BRUJO.POPA"
           banco="Banco Supervielle"
           nombre="De Alba, Marcelo Jose"
-          claseContenedor="bg-principal-light text-white font-merriweather"
-          claseBoton="border-2 py-3 px-6 rounded-full hover:text-gray-800 transform transition-transform duration-300 ease-in-out font-semibold"
+          claseContenedor=" text-white font-montserrat"
+          claseBoton="border border-[#d7b049] py-3 px-8 rounded-full bg-[#d7b049] text-white hover:bg-transparent transition"
           textSize="text-md"
-          background={{ backgroundColor: colorPrincipal }}
-          styleBotonModal={{
-            backgroundColor: colorSecundario,
-            borderColor: "border-yellow-950",
-          }}
+          background={{ backgroundColor: "black" }}
+         
           claseBotonModal={{
             backgroundColor: colorSecundario,
             borderColor: colorSecundario,
@@ -194,7 +178,6 @@ const Invitacion = () => {
           styleModal={{ backgroundColor: colorSecundario }}
           styleBorderModal={{ borderColor: colorPrincipal }}
           styleTextColor={{ color: colorPrincipal }}
-          claseModal="bg-principal-light"
           borderModal="border-principal-light"
           textColor="text-principal-light"
         //   moneda_extranjera={invitacionData.moneda_extranjera}
@@ -206,8 +189,8 @@ const Invitacion = () => {
           <TextoFinal textoFinal="Hay momentos en la vida que son especiales por sí solos, compartirlos con los que quieres los convierten en momentos inolvidables" textClass="font-merriweather text-gray-600"/>
         <Asistencia
           linkAsistencia="https://docs.google.com/forms/d/e/1FAIpQLScK60lzNoScu8tHIekssS6ItUJRHRWjFAMy-1JCKicjaMGHnA/viewform?usp=dialog"
-          clase="py-10 bg-fondo-banner border-t bordet-t-gray-800"
-          claseButton="border-2 py-3 px-6 rounded-full border-gray-800 font-semibold hover:border-yellow-950 hover:bg-white hover:text-gray:800"
+          clase="bg-fondo-banner border-t bordet-t-gray-800"
+          claseButton="border border-[#d7b049] py-3 px-8 rounded-full bg-[#d7b049] text-white hover:bg-transparent transition hover:text-gray-800 cursor-pointer"
         />
         <Footer />
       </div>

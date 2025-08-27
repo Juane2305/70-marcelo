@@ -6,7 +6,6 @@ import { IoCopyOutline } from "react-icons/io5";
 export const Modal = ({
   claseBoton,
   claseBotonModal,
-  claseModal,
   borderModal,
   cbu,
   alias,
@@ -44,7 +43,7 @@ export const Modal = ({
   return (
     <>
       <button
-        className={ `bg-white py-4 px-6 border-2 mt-5 transition hover:transform hover:scale-105 hover:shadow-lg border-yellow-950 text-gray-800 ${claseBoton}`}
+        className={ `${claseBoton} cursor-pointer mt-5`}
         data-aos='fade-up'
         onClick={() => setIsOpen(true)}
       >
@@ -52,7 +51,7 @@ export const Modal = ({
       </button>
 
       {isOpen && (
-        <div className={`fixed inset-0 ${claseModal} bg-opacity-30 backdrop-blur-md flex justify-center items-center z-50`} style={styleModal}>
+        <div className={`fixed inset-0 bg-black/30 backdrop-blur-md flex justify-center items-center z-50`} style={styleModal}>
           <div className={`bg-white p-10 rounded-lg flex flex-col justify-center items-center border-2 ${borderModal}`} style={styleBorderModal}>
             <div className="flex flex-col justify-center text-center space-y-7 text-gray-900 w-full max-w-md ">
               <h2 className="font-bold text-2xl">Datos Bancarios</h2>
