@@ -21,27 +21,27 @@ const Invitacion = () => {
   const images = [
     {
       index: 1,
-      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219502/bf83c731-d672-4ecc-82aa-75372f5379cd.png",
-    },
-    {
-      index: 2,
-      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219469/d77b8056-67b3-41e9-8f6b-f32e71ed9d12.png",
-    },
-    {
-      index: 3,
-      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219531/7a483688-d0e2-4d42-a6e0-7645447c740e.png",
-    },
-    {
-      index: 4,
       img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219543/e9f24e29-f26b-4677-97d0-7ac60e79c910.png",
     },
     {
+      index: 2,
+      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219531/7a483688-d0e2-4d42-a6e0-7645447c740e.png",
+    },
+    {
+      index: 3,
+      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219502/bf83c731-d672-4ecc-82aa-75372f5379cd.png",
+    },
+    {
+      index: 4,
+      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219469/d77b8056-67b3-41e9-8f6b-f32e71ed9d12.png",
+    },
+    {
       index: 5,
-      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219560/48f46250-e031-4bdb-8cc0-0c40d055666c.png",
+      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219517/831ed1f8-3834-4320-8348-28212e6255cb.png",
     },
     {
       index: 6,
-      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219517/831ed1f8-3834-4320-8348-28212e6255cb.png",
+      img: "https://res.cloudinary.com/dfschbyq2/image/upload/v1756219560/48f46250-e031-4bdb-8cc0-0c40d055666c.png",
     },
   ];
   
@@ -58,35 +58,32 @@ const Invitacion = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Vignette oscura para bordes */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.75) 80%, rgba(0,0,0,0.95) 100%)',
-            zIndex: 0,
-          }}
-        />
-        {/* Capa adicional suave para resaltar el texto en mobile */}
-        <div className="absolute inset-0 bg-black/20 md:bg-black/10 z-0" />
+        {/* Vignette más suave */}
+        
+
+        {/* Luz central intensa para resaltar las esferas */}
+        
+
+        {/* Foco adicional desde arriba (como luz de techo) */}
+        
 
         {/* Botón de música (ya existe arriba con MusicScreen) */}
 
         {/* Título central */}
         <div className="mt-30 z-20">
           <h1
-            className="z-10 font-parisienne italic text-7xl md:text-9xl leading-none mt-20 text-white"
+            className="z-10 font-tangerine italic text-7xl md:text-9xl leading-none mt-20 text-white"
             style={{
               textShadow:
                 '0 0 6px rgba(255,255,255,0.9), 0 0 22px rgba(255,255,255,0.6), 0 0 38px rgba(255,255,255,0.35)',
             }}
           >
-            Marcelo
+            Marce
           </h1>
 
           {/* Subtítulo */}
           <p
-            className="z-10 mt-5 font-birthstone text-white/90 text-3xl md:text-4xl "
+            className="z-10 mt-5 font-birthstone text-[#d7b049] text-3xl md:text-4xl "
             style={{
               textShadow: '0 0 10px rgba(255,255,255,0.35)',
               letterSpacing: '0.06em',
@@ -186,7 +183,7 @@ const Invitacion = () => {
         //   titular_extranjera={invitacionData.titular_extranjera}
         //   banco_extranjera={invitacionData.banco_extranjera}
         />
-          <TextoFinal textoFinal="Hay momentos en la vida que son especiales por sí solos, compartirlos con los que quieres los convierten en momentos inolvidables" textClass="font-merriweather text-gray-600"/>
+          <TextoFinal textoFinal='"Hay momentos en la vida que son especiales por sí solos, compartirlos con los que querés los convierten en momentos inolvidables"' textClass="font-merriweather text-gray-600 italic"/>
         <Asistencia
           linkAsistencia="https://docs.google.com/forms/d/e/1FAIpQLScK60lzNoScu8tHIekssS6ItUJRHRWjFAMy-1JCKicjaMGHnA/viewform?usp=dialog"
           clase="bg-fondo-banner border-t bordet-t-gray-800"

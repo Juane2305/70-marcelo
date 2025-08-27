@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import { PiChampagneLight } from "react-icons/pi";
 
 
-const Places = ({salon, hora_fiesta}) => {
+const Places = ({salon}) => {
 
   useEffect(() => {
     AOS.init({
@@ -20,7 +20,10 @@ const Places = ({salon, hora_fiesta}) => {
         <div className=' flex flex-col justify-center items-center gap-y-3' data-aos= 'fade-left'>
           <PiChampagneLight color='#d7b049' size={70} className='animate-pulse'/>
           <h2 className='text-center font-light text-3xl tracking-widest mt-5'>FIESTA</h2>
-          <p className='font-light text-lg text-center px-5 text-gray-700'>La fiesta será en {salon} <br /> a las {hora_fiesta}</p>
+          <p className='font-semibold text-lg text-center px-5 text-gray-700'>Sábado 22 de Noviembre</p>
+          <p className='font-semibold text-lg text-center px-5 text-gray-700'>21:00 hs</p>
+          <p className='font-light text-lg text-center px-5 text-gray-700'>La fiesta será en <span className='font-semibold'>{salon}</span></p>
+          <p className='text-lg text-center px-5 text-gray-700'>¡Hay estacionamiento en el lugar!</p>
         </div>
       </section>
     </div>

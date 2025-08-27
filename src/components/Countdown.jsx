@@ -52,21 +52,21 @@ const Countdown = ( {containerClasses, targetDate} ) => {
       <div className="flex flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-8 text-lg" data-aos="fade-in">
         <div className="flex space-x-16 sm:space-x-8">
           <div className="flex flex-col items-center">
-            <div className="text-2xl">{timeLeft.days}</div>
+            <div className="text-3xl font-bold">{timeLeft.days}</div>
             <span>Días</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-2xl">{timeLeft.hours}</div>
+            <div className="text-3xl font-bold">{timeLeft.hours}</div>
             <span>Horas</span>
           </div>
         </div>
         <div className="flex space-x-8">
           <div className="flex flex-col items-center">
-            <div className="text-2xl">{timeLeft.minutes}</div>
+            <div className="text-3xl font-bold">{timeLeft.minutes}</div>
             <span>Minutos</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-2xl">{timeLeft.seconds}</div>
+            <div className="text-3xl font-bold">{timeLeft.seconds}</div>
             <span>Segundos</span>
           </div>
         </div>
