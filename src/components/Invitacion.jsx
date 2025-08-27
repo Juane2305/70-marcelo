@@ -52,7 +52,7 @@ const Invitacion = () => {
       <div
         className="relative flex flex-col items-center justify-center h-screen w-full text-center overflow-hidden bg-fixed"
         style={{
-          backgroundImage: "url('/src/assets/boliche.jpg')",
+          backgroundImage: "url('/boliche.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
