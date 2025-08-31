@@ -70,9 +70,9 @@ const Invitacion = () => {
         {/* Botón de música (ya existe arriba con MusicScreen) */}
 
         {/* Título central */}
-        <div className="mt-30 z-20">
+        <div className="mt-60 z-20">
           <h1
-            className="z-10 font-tangerine italic text-7xl md:text-9xl leading-none mt-20 text-white"
+            className="z-10 font-dancingScript italic text-7xl md:text-9xl leading-none mt-20 text-white"
             style={{
               textShadow:
                 '0 0 6px rgba(255,255,255,0.9), 0 0 22px rgba(255,255,255,0.6), 0 0 38px rgba(255,255,255,0.35)',
@@ -83,13 +83,13 @@ const Invitacion = () => {
 
           {/* Subtítulo */}
           <p
-            className="z-10 mt-5 font-birthstone text-[#d7b049] text-3xl md:text-4xl "
+            className="z-10 mt-5 font-parisienne text-[#d7b049] text-2xl md:text-4xl "
             style={{
               textShadow: '0 0 10px rgba(255,255,255,0.35)',
               letterSpacing: '0.06em',
             }}
           >
-            7 décadas haciendo historia
+            7 décadas haciendo historia!
           </p>
         </div>
 
@@ -183,7 +183,7 @@ const Invitacion = () => {
         //   titular_extranjera={invitacionData.titular_extranjera}
         //   banco_extranjera={invitacionData.banco_extranjera}
         />
-          <TextoFinal textoFinal='"Hay momentos en la vida que son especiales por sí solos, compartirlos con los que querés los convierten en momentos inolvidables"' textClass="font-merriweather text-gray-600 italic"/>
+          <TextoFinal  textoFinal='"Hay momentos en la vida que son especiales por sí solos, compartirlos con los que querés los convierten en momentos inolvidables"' textClass="font-cormorantGaramond text-lg md:text-2xl text-gray-600 italic"/>
         <Asistencia
           linkAsistencia="https://docs.google.com/forms/d/e/1FAIpQLScK60lzNoScu8tHIekssS6ItUJRHRWjFAMy-1JCKicjaMGHnA/viewform?usp=dialog"
           clase="bg-fondo-banner border-t bordet-t-gray-800"

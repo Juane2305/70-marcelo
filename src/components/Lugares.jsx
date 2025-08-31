@@ -22,8 +22,9 @@ const Places = ({salon}) => {
           <h2 className='text-center font-light text-3xl tracking-widest mt-5'>FIESTA</h2>
           <p className='font-semibold text-lg text-center px-5 text-gray-700'>Sábado 22 de Noviembre</p>
           <p className='font-semibold text-lg text-center px-5 text-gray-700'>21:00 hs</p>
-          <p className='font-light text-lg text-center px-5 text-gray-700'>La fiesta será en <span className='font-semibold'>{salon}</span></p>
-          <p className='text-lg text-center px-5 text-gray-700'>¡Hay estacionamiento en el lugar!</p>
+          <p className='font-light text-lg text-center px-5 text-gray-700'><span className='font-semibold'>{salon}</span></p>
+          <p className='font-light text-lg text-center px-5 text-gray-700'>Olga Cossettini 1031. Caba</p>
+          <p className='text-lg font-light text-center px-5 text-gray-700'>¡Hay estacionamiento en el lugar!</p>
         </div>
       </section>
     </div>
