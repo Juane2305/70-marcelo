@@ -58,19 +58,7 @@ const Invitacion = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Vignette más suave */}
-        
-
-        {/* Luz central intensa para resaltar las esferas */}
-        
-
-        {/* Foco adicional desde arriba (como luz de techo) */}
-        
-
-        {/* Botón de música (ya existe arriba con MusicScreen) */}
-
-        {/* Título central */}
-        <div className="mt-60 z-20">
+        <div className="mt-80 z-20">
           <h1
             className="z-10 font-dancingScript italic text-7xl md:text-9xl leading-none mt-20 text-white"
             style={{
@@ -81,7 +69,6 @@ const Invitacion = () => {
             Marce
           </h1>
 
-          {/* Subtítulo */}
           <p
             className="z-10 mt-5 font-parisienne text-[#d7b049] text-2xl md:text-4xl "
             style={{
@@ -183,7 +170,7 @@ const Invitacion = () => {
         //   titular_extranjera={invitacionData.titular_extranjera}
         //   banco_extranjera={invitacionData.banco_extranjera}
         />
-          <TextoFinal  textoFinal='"Hay momentos en la vida que son especiales por sí solos, compartirlos con los que querés los convierten en momentos inolvidables"' textClass="font-cormorantGaramond text-lg md:text-2xl text-gray-600 italic"/>
+          <TextoFinal  textoFinal='"Hay momentos en la vida que son especiales por sí solos, compartirlos con los que querés los convierten en inolvidables"' textClass="font-cormorantGaramond text-2xl text-gray-600 italic"/>
         <Asistencia
           linkAsistencia="https://docs.google.com/forms/d/e/1FAIpQLScK60lzNoScu8tHIekssS6ItUJRHRWjFAMy-1JCKicjaMGHnA/viewform?usp=dialog"
           clase="bg-fondo-banner border-t bordet-t-gray-800"

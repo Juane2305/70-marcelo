@@ -9,7 +9,7 @@ const DressCode = ({dress_code}) => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Duración de la animación en milisegundos
+      duration: 1000, 
       easing: 'ease-in-out',
       once: true,
     });
@@ -18,8 +18,8 @@ const DressCode = ({dress_code}) => {
   return (
     <div className="  mt-20 flex flex-col justify-center items-center py-20 font-montserrat">
         <h3 className='text-gray-950 text-4xl text-center px-5 md:px-0 font-thin tracking-widest' data-aos= 'fade-up'>Dress Code</h3>
-        <img src={dressCode} alt="Codigo de vestimenta" className="w-66 pt-10 animate-pulse" data-aos= 'fade-up'/>
-        <p className=' text-xl font-light text-gray-700 tracking-wider mt-10' data-aos= 'fade-up'>{dress_code}</p>
+        <img src={dressCode} alt="Codigo de vestimenta" className="w-72 animate-pulse" data-aos= 'fade-up'/>
+        <p className=' text-xl font-light text-gray-700 tracking-wider' data-aos= 'fade-up'>{dress_code}</p>
     </div>
   )
 }
