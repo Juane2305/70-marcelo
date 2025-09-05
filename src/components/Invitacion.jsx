@@ -138,7 +138,7 @@ const Invitacion = () => {
             titleCalendar={`Cumpleaños de Marcelo`}
             salon="Olga Cossettini 1031. Caba"
             fechaComienzo="20251122T2100000300"
-            fechaFin="20251123T0300000300"
+            fechaFin="20251123T0400000300"
           />
         </div>
         <div className="relative">
